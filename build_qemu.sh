@@ -24,7 +24,7 @@ for CPU_TARGET in $CPU_TARGETS; do
 
     echo "[*] Attempting to build QEMU (fingers crossed!)..."
 
-    make -j || exit 1
+    make || exit 1
 
     echo "[+] Build process successful!"
 
