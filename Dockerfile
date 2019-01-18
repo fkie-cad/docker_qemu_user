@@ -10,4 +10,4 @@ ENV PATH="/opt/qemu-targets:${PATH}"
 
 RUN apt-get remove gcc cmake make gdb libtool-bin wget python automake bison git \
     libssl-dev nettle-dev flex python3 build-essential python3-setuptools python3-dev screen libpixman-1-dev && \
-    apt-get autoremove && apt-get clean
+    apt-get autoremove -y && apt-get clean -y
