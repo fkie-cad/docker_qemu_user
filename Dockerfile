@@ -5,7 +5,7 @@ RUN install_clean gcc cmake make libtool-bin wget python automake bison libglib2
 
 WORKDIR /opt
 COPY build_qemu.sh /opt/build_qemu.sh
-RUN ./build_qemu.sh "qemu-3.0.0"
+RUN ./build_qemu.sh "qemu-3.1.0"
 ENV PATH="/opt/qemu-targets:${PATH}"
 
 RUN apt-get remove -y gcc cmake make gdb libtool-bin wget python automake bison git \
