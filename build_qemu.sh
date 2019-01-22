@@ -27,6 +27,3 @@ for CPU_TARGET in ${CPU_TARGETS}; do
 
     cp -f "${CPU_TARGET}-linux-user/qemu-${CPU_TARGET}" "/opt/qemu-targets" || exit 1
 done
-
-cd ..
-rm -rf ${QEMU_VERSION}
