@@ -1,13 +1,50 @@
 FROM phusion/baseimage:0.11
 
-RUN install_clean gcc cmake make libtool-bin wget python automake bison libglib2.0 git \
-    libssl-dev nettle-dev flex python3 build-essential python3-setuptools python3-dev screen gdb libpixman-1-dev
-
 WORKDIR /opt
 COPY build_qemu.sh /opt/build_qemu.sh
-RUN ./build_qemu.sh "qemu-3.1.0"
 ENV PATH="/opt/qemu-targets:${PATH}"
 
-RUN apt-get remove -y gcc cmake make gdb libtool-bin wget python automake bison git \
-    libssl-dev nettle-dev flex python3 build-essential python3-setuptools python3-dev screen libpixman-1-dev && \
-    apt-get autoremove -y && apt-get clean -y
+RUN install_clean \
+        automake \
+        bison \
+        build-essential \
+        cmake \
+        flex \
+        gcc \
+        gdb \
+        git \
+        libglib2.0 \
+        libpixman-1-dev \
+        libssl-dev \
+        libtool-bin \
+        make \
+        nettle-dev \
+        python \
+        python3 \
+        python3-dev \
+        python3-setuptools \
+        screen \
+        wget \
+    && ./build_qemu.sh "qemu-3.1.0" \
+    && apt-get remove -y \
+        automake \
+        bison \
+        build-essential \
+        cmake \
+        flex \
+        gcc \
+        gdb \
+        git \
+        libpixman-1-dev \
+        libssl-dev \
+        libtool-bin \
+        make \
+        nettle-dev \
+        python \
+        python3 \
+        python3-dev \
+        python3-setuptools \
+        screen \
+        wget \
+    && apt-get autoremove -y \
+    && apt-get clean -y
