@@ -24,7 +24,7 @@ RUN install_clean \
         python3-setuptools \
         screen \
         wget
-RUN ./build_qemu.sh "qemu-3.1.0"
+RUN ./build_qemu.sh "qemu-3.0.1"
 
 
 FROM phusion/baseimage:0.11
