@@ -1,2 +1,4 @@
 # docker_qemu_user
-Phusion-based docker image containing the binaries for [QemuUserEmulation](https://wiki.debian.org/QemuUserEmulation)
+Alpine docker image containing the binaries for [QemuUserEmulation](https://wiki.debian.org/QemuUserEmulation)
+
+Build with `docker build . -t fkiecad/qemu_user:alpine-3.14`
